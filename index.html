@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>OrientaQR</title>
+</head>
+<body>
+
+  <h1>OrientaQR 🚀</h1>
+
+  <p>Tu sistema de orientación con códigos QR está funcionando.</p>
+
+  <p id="info"></p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const ubicacion = params.get("ubicacion");
+
+    if (ubicacion) {
+      document.getElementById("info").innerText =
+        "Estás en: " + ubicacion;
+    } else {
+      document.getElementById("info").innerText =
+        "Ubicación no detectada";
+    }
+  </script>
+
+</body>
+</html>
