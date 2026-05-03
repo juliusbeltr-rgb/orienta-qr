@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>OrientaQR</title>
-</head>
-<body>
-
 <script>
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
 const lugares = {
-  entrada: { nombre: "Entrada Principal", imagen: "imagenes/entrada.png" },
-  biblioteca: { nombre: "Biblioteca", imagen: "imagenes/biblioteca.png" },
-  aula: { nombre: "Aula Magistral", imagen: "imagenes/aula.png" },
-  cafeteria: { nombre: "Cafetería", imagen: "imagenes/cafeteria.png" },
-  administracion: { nombre: "Área Administrativa", imagen: "imagenes/administracion.png" }
+  entrada: { nombre: "Entrada Principal", imagen: "entrada.png" },
+  biblioteca: { nombre: "Biblioteca", imagen: "biblioteca.png" },
+  aula: { nombre: "Aula Magistral", imagen: "aula.png" },
+  cafeteria: { nombre: "Cafetería", imagen: "cafeteria.png" },
+  administracion: { nombre: "Área Administrativa", imagen: "administracion.png" }
 };
 
 if (lugares[id]) {
@@ -30,6 +23,3 @@ if (lugares[id]) {
   `;
 }
 </script>
-
-</body>
-</html>
