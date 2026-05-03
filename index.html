@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>OrientaQR</title>
 </head>
 <body>
 
-  <h1>OrientaQR 🚀</h1>
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
 
-  <p>Tu sistema de orientación con códigos QR está funcionando.</p>
+const lugares = {
+  entrada: { nombre: "Entrada Principal", imagen: "imagenes/entrada.png" },
+  biblioteca: { nombre: "Biblioteca", imagen: "imagenes/biblioteca.png" },
+  aula: { nombre: "Aula Magistral", imagen: "imagenes/aula.png" },
+  cafeteria: { nombre: "Cafetería", imagen: "imagenes/cafeteria.png" },
+  administracion: { nombre: "Área Administrativa", imagen: "imagenes/administracion.png" }
+};
 
-  <p id="info"></p>
-
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const ubicacion = params.get("ubicacion");
-
-    if (ubicacion) {
-      document.getElementById("info").innerText =
-        "Estás en: " + ubicacion;
-    } else {
-      document.getElementById("info").innerText =
-        "Ubicación no detectada";
-    }
-  </script>
+if (lugares[id]) {
+  document.body.innerHTML = `
+    <h1>📍 Ud está aquí</h1>
+    <h2>${lugares[id].nombre}</h2>
+    <img src="${lugares[id].imagen}" width="300">
+  `;
+} else {
+  document.body.innerHTML = `
+    <h1>OrientaQR 🚀</h1>
+    <p>Ubicación no detectada</p>
+  `;
+}
+</script>
 
 </body>
 </html>
